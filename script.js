@@ -1,6 +1,6 @@
 const button = document.getElementById('test');
-let count = 1;
+let count = 0;
 button.addEventListener('click', () => {
   count++;
-  button.textContent = 'test: ' + count;
+  button.textContent = 'times clicked: ' + count;
 });
