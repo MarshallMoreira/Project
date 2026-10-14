@@ -4,5 +4,5 @@ let a = "<li>hi</li>";
 button.addEventListener('click', () => {
   count++;
   a = a + "<li>" + count + " clicks</li>"
-  button.innerHTML = "<ol>" + a + "</ol>";
+  button.innerHTML = "<ul>" + a + "</ul>";
 });
