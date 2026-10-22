@@ -10,7 +10,7 @@
 
   <h1>Student Suggestor</h1>
   <div id="inputArea"> <!-- I might want to make this change dynamically so this feels maybe necessary -->
-    <form>
+    <form class="input_form"> <!-- I think using a class here is right idk -->
       <p>
         <label for="title">Title:</label>
         <input id="title" name="post_title" />
@@ -20,7 +20,8 @@
         <label for="msg">Message:</label>
         <textarea id="msg" name="post_msg"></textarea>
       </p>
-      <p class="button">
+
+      <p>
         <button type="submit">Submit your suggestion</button>
       </p>
     </form>
