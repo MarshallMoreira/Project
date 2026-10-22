@@ -9,13 +9,19 @@
 <body>
 
   <h1>Student Suggestor</h1>
-  <div id="inputArea"> <!-- I might want to make this change dynamically so this feels necessary -->
-    <p>
-      Make a suggestion you want the school to add.
-      <br>Post Title: <input id="title">
-      <br>Post Contents:<br><textarea id="contents"></textarea>
-    </p>
+  <div id="inputArea"> <!-- I might want to make this change dynamically so this feels maybe necessary -->
+    <form>
+      <p>
+        <label for="title">Title:</label>
+        <input id="title" name="post_title" />
+      </p>
 
+      <p>
+        <label for="contents">Post contents</label>
+        <textarea id="contents" name="post_contents"></textarea>
+      </p>
+
+    </form>
     <button id="test">test button</button>
   </div>
 </body>
