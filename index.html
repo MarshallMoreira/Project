@@ -9,7 +9,8 @@
 <body>
 
   <h1>Student Suggestor</h1>
-  <div id="inputArea"> <!-- I might want to make this change dynamically so this feels maybe necessary -->
+  <h2>Create</h2>
+  <div>
     <form>
       <p>
         <label for="title">Title:</label>
@@ -27,6 +28,15 @@
     </form>
     <br>
     <h2>Suggestions</h2>
+    <h3>Search</h3>
+    <label for="search">Search:</label>
+    <input id="search" name="search" />
+    <select>
+      <option value="title">By Title</option>
+      <option value="suggestion">By Contents</option>
+      <option value="votes">By Votes</option>
+      <option value="recent">By Most Recent</option>
+    </select>
     <table>
       <tr>
         <th>Title</th>
@@ -45,6 +55,7 @@
       </tr>
     </table>
 
+    <br>
     <button id="test">test button</button>
   </div>
 </body>
