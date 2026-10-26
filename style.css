@@ -2,10 +2,14 @@
     font-size:50%;
     color:gray;
 }
-#suggestionsTable {
-    border: 3px solid;
+.suggestionsTable table {
+    border: 3px solid black;
     border-collapse: collapse;
+    background-color: darkslategray;
+    color:white;
 }
-#suggestionsTable th,td {
+.suggestionsTable table th, .suggestionsTable table td {
+    border: 1px solid black;
     padding: 10px;
+    border-collapse: collapse;
 }

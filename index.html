@@ -38,27 +38,28 @@
       <option value="recent">By Most Recent</option>
     </select>
   
-    <table id="suggestionsTable"> <!-- When I actually make this work, I can have a function that takes a post ID, gets the data and puts it in a table -->
-      <tr>
-        <th>Title</th>
-        <th>Suggestion</th>
-        <th>Votes</th>
-        <th>Info</th>
-      </tr>
-      <tr>
-        <td>Fix AC<br><span class="id-text">ID: 123456</span></td>
-        <td>Example text aaaaaaaa</td>
-        <td>+2</td>
-        <td><p>Posted by: <em>John</em><br>Date: <em>5/10/26</em></p></td>
-      </tr>
-      <tr>
-        <td>Example<br><span class="id-text">ID: number</span></td>
-        <td>Example</td>
-        <td>-100</td>
-        <td><p>Posted by: <em>Someone</em><br>Date: <em>1/2/23</em></p></td>
-      </tr>
-    </table>
-
+    <div class="suggestionsTable">
+      <table id="suggestionsOutput"> <!-- When I actually make this work, I can have a function that takes a post ID, gets the data and puts it in a table -->
+        <tr>
+          <th>Title</th>
+          <th>Suggestion</th>
+          <th>Votes</th>
+          <th>Info</th>
+        </tr>
+        <tr>
+          <td>Fix AC<br><span class="id-text">ID: 123456</span></td>
+          <td>Example text aaaaaaaa</td>
+          <td>+2</td>
+          <td><p>Posted by: <em>John</em><br>Date: <em>5/10/26</em></p></td>
+        </tr>
+        <tr>
+          <td>Example<br><span class="id-text">ID: number</span></td>
+          <td>Example</td>
+          <td>-100</td>
+          <td><p>Posted by: <em>Someone</em><br>Date: <em>1/2/23</em></p></td>
+        </tr>
+      </table>
+    </div>
     <br>
     <button id="test">test button</button>
   </div>
