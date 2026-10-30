@@ -23,7 +23,7 @@ function createTable(data) {
     if  (row.votes < 0) {
       voteSign = "";
     }
-    next = "<tr><td>" + row.title + "<br><span class=\"id-text\">ID: " + row.id + "</span></td><td>" + row.suggestion + "</td><td>" + voteSign + row.votes + "</td><td>Posted by <em>" + row.author + "</em><br>Date: <em>" + row.date + "</em></td></tr>";
+    next = "<tr><td>" + row.title + "<br><span class=\"id-text\">ID: " + row.id + "</span></td><td>" + row.suggestion + "</td><td>" + voteSign + row.votes + "</td><td>Posted by: <em>" + row.author + "</em><br>Date: <em>" + row.date + "</em></td></tr>";
     output = output + next;
   }
   return output;
