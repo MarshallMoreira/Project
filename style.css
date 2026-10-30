@@ -1,17 +1,43 @@
+* {
+  color:white;
+  font-family:courier;
+  text-shadow: 1px 1px black;
+}
+body {
+  background: #2c1b2c;
+}
+button,input,select,textarea {
+  background:#242436;
+  border: 3px solid #483648;
+  border-radius: 6px;
+  box-shadow: 0px 0px;
+}
 .id-text {
     font-size:50%;
-    color:gray;
+    color:lightgray;
+}
+.createForm {
+  button,input,select,textarea {
+    width:100%;
+  }
 }
 .suggestionsTable {
     table {
-        border: 3px solid black;
-        border-collapse: collapse;
-        background-color: darkslategray;
+        border: 3px solid #555555;
+        border-radius: 9px;
+        border-collapse: separate;
+        background-color: #333333;
         color:white;
+        border-spacing:0px;
+        overflow:hidden;
         th,td {
-            border: 1px solid black;
             padding: 10px;
-            border-collapse: collapse;
+        }
+        th:not(:last-child),td:not(:last-child) {
+            border-right: 1px solid #555566;
+        }
+        tr:not(:last-child) th,tr:not(:last-child) td {
+            border-bottom: 1px solid #555566;
         }
     }
 }

@@ -7,11 +7,10 @@
   <link href="style.css" rel="stylesheet" />
 </head>
 <body>
-
   <h1>Student Suggestor</h1>
   <h2>Create</h2>
   <div>
-    <form>
+    <form class="createForm">
       <p>
         <label for="title">Title:</label>
         <input id="title" name="post_title" />
@@ -37,7 +36,7 @@
       <option value="votes">By Votes</option>
       <option value="recent">By Most Recent</option>
     </select>
-  
+    <br>
     <div class="suggestionsTable">
       <table id="suggestionsOutput"> <!-- When I actually make this work, I can have a function that takes a post ID, gets the data and puts it in a table -->
         <tr>
