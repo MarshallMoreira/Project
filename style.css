@@ -2,14 +2,16 @@
     font-size:50%;
     color:gray;
 }
-.suggestionsTable table {
-    border: 3px solid black;
-    border-collapse: collapse;
-    background-color: darkslategray;
-    color:white;
-}
-.suggestionsTable table th, .suggestionsTable table td {
-    border: 1px solid black;
-    padding: 10px;
-    border-collapse: collapse;
+.suggestionsTable {
+    table {
+        border: 3px solid black;
+        border-collapse: collapse;
+        background-color: darkslategray;
+        color:white;
+        th,td {
+            border: 1px solid black;
+            padding: 10px;
+            border-collapse: collapse;
+        }
+    }
 }
