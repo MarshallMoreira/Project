@@ -4,11 +4,11 @@
   text-shadow: 1px 1px black;
 }
 body {
-  background: #2c1b2c;
+  background: #1b1b2c;
 }
 button,input,select,textarea {
   background:#242436;
-  border: 3px solid #483648;
+  border: 3px solid #403648;
   border-radius: 6px;
   box-shadow: 0px 0px;
 }
