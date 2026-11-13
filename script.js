@@ -1,15 +1,19 @@
-const button = document.getElementById('test');
-const suggestionsTable = document.getElementById('suggestionsOutput');
+const form = document.querySelector('.createForm');
+console.log(form);
+const suggestionsTable = document.querySelector('#suggestionsOutput');
+
 let loadedSuggestions = [];
-loadedSuggestions.push({"title":"Fix AC","suggestion":"Example text aaaaaaaa","votes":2,"author":"John","date":"5/10/26","id":123456});
-loadedSuggestions.push({"title":"Example","suggestion":"Example","votes":-1000,"author":"Someone","date":"1/2/23","id":654321});
+loadedSuggestions.push({"title":"Fix AC","suggestion":"Example text aaaaaaaa","votes":2,"author":"John","date":"5/10/26","id":1});
+loadedSuggestions.push({"title":"Example","suggestion":"Example","votes":-1000,"author":"Someone","date":"1/2/23","id":2});
 console.log(loadedSuggestions);
-let count = 0;
-let a = "<li>test:</li>";
-button.addEventListener('click', () => {
-  count++;
-  a = a + "<li>" + count + " clicks</li>"
-  button.innerHTML = "<ul>" + a + "</ul>" + loadedSuggestions[0];
+
+form.addEventListener('submit', () => {
+  event.preventDefault();
+  const data = new FormData(event.target);
+  let title = data.get("post_title");
+  let message = data.get("post_msg");
+  loadedSuggestions.push({"title":title,"suggestion":message,"votes":0,"author":"N/A","date":Date.now(),"id":loadedSuggestions.length + 1});
+  suggestionsTable.innerHTML = createTable(loadedSuggestions);
 });
 
 suggestionsTable.innerHTML = createTable(loadedSuggestions);
