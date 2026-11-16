@@ -50,6 +50,10 @@ function getSuggestions() {
 
 function addSuggestion(item) {
   saved = getSuggestions();
+  if (saved.length == 0) {
+    saved = [];
+    console.log("i don't even know");
+  }
   saved.push(item);
   localStorage.setItem("suggestions",saved);
 }
