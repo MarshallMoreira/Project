@@ -11,6 +11,8 @@ loadedSuggestions = getSuggestions();
 if (loadedSuggestions.length == 0) {
   localStorage.setItem("suggestions",[]);
   console.log("i guess");
+  loadedSuggestions = [];
+  console.log(loadedSuggestions);
 }
 
 console.log(loadedSuggestions);
