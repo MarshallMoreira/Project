@@ -2,9 +2,12 @@ const form = document.querySelector('.createForm');
 console.log(form);
 const suggestionsTable = document.querySelector('#suggestionsOutput');
 
+const test = document.getElementById("test");
+
 let loadedSuggestions = [];
-loadedSuggestions.push({"title":"Fix AC","suggestion":"Example text aaaaaaaa","votes":2,"author":"John","date":"5/10/26","id":1});
-loadedSuggestions.push({"title":"Example","suggestion":"Example","votes":-1000,"author":"Someone","date":"1/2/23","id":2});
+loadedSuggestions.push({"title":"Fix AC","suggestion":"Example text aaaaaaaa","votes":2,"author":"John","date":"5/10/26","id":0});
+loadedSuggestions.push({"title":"Example","suggestion":"Example","votes":-1000,"author":"Someone","date":"1/2/23","id":1});
+loadedSuggestions = getSuggestions();
 console.log(loadedSuggestions);
 
 form.addEventListener('submit', () => {
@@ -12,7 +15,8 @@ form.addEventListener('submit', () => {
   const data = new FormData(event.target);
   let title = data.get("post_title");
   let message = data.get("post_msg");
-  loadedSuggestions.push({"title":title,"suggestion":message,"votes":0,"author":"N/A","date":Date.now(),"id":loadedSuggestions.length + 1});
+  loadedSuggestions.push({"title":title,"suggestion":message,"votes":0,"author":"N/A","date":Date.now(),"id":loadedSuggestions.length});
+  addSuggestion(loadedSuggestions[loadedSuggestions.length-1]);
   suggestionsTable.innerHTML = createTable(loadedSuggestions);
 });
 
@@ -32,3 +36,15 @@ function createTable(data) {
   }
   return output;
 }
+
+function getSuggestions() {
+  return localStorage.getItem("suggestions");
+} 
+
+function addSuggestion(item) {
+  localStorage.setItem("suggestions",localStorage.getItem("suggestions").push(item));
+}
+
+test.addEventListener('click', () => {
+  localStorage.clear();
+});
