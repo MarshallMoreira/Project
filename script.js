@@ -7,7 +7,7 @@ const test = document.getElementById("test");
 let loadedSuggestions = [];
 loadedSuggestions.push({"title":"Fix AC","suggestion":"Example text aaaaaaaa","votes":2,"author":"John","date":"5/10/26","id":0});
 loadedSuggestions.push({"title":"Example","suggestion":"Example","votes":-1000,"author":"Someone","date":"1/2/23","id":1});
-loadedSuggestions = getSuggestions() ?? [];
+loadedSuggestions = getSuggestions();
 if (loadedSuggestions.length == 0) {
   localStorage.setItem("suggestions",[]);
   console.log("i guess");
@@ -43,11 +43,13 @@ function createTable(data) {
 }
 
 function getSuggestions() {
-  return localStorage.getItem("suggestions");
+  return localStorage.getItem("suggestions") ?? [];
 } 
 
 function addSuggestion(item) {
-  localStorage.setItem("suggestions",localStorage.getItem("suggestions").push(item) ?? []);
+  saved = getSuggestions();
+  saved.push(item);
+  localStorage.setItem("suggestions",saved);
 }
 
 test.addEventListener('click', () => {
