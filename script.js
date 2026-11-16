@@ -43,7 +43,7 @@ function getSuggestions() {
 } 
 
 function addSuggestion(item) {
-  localStorage.setItem("suggestions",localStorage.getItem("suggestions").push(item) ?? []);
+  localStorage.setItem("suggestions",localStorage.getItem("suggestions")??[].push(item) ?? []);
 }
 
 test.addEventListener('click', () => {
