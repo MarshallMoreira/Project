@@ -47,4 +47,5 @@ function addSuggestion(item) {
 
 test.addEventListener('click', () => {
   localStorage.clear();
+  localStorage.setItem("suggestions",[]);
 });
