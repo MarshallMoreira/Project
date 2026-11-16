@@ -8,6 +8,11 @@ let loadedSuggestions = [];
 loadedSuggestions.push({"title":"Fix AC","suggestion":"Example text aaaaaaaa","votes":2,"author":"John","date":"5/10/26","id":0});
 loadedSuggestions.push({"title":"Example","suggestion":"Example","votes":-1000,"author":"Someone","date":"1/2/23","id":1});
 loadedSuggestions = getSuggestions();
+if (loadedSuggestions = null) {
+  loadedSuggestions = [];
+  localStorage.setItem("suggestions",[]);
+  console.log("empty ?");
+}
 console.log(loadedSuggestions);
 
 form.addEventListener('submit', () => {
