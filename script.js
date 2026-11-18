@@ -7,7 +7,7 @@ const test = document.getElementById("test");
 test.addEventListener('click', () => {
   localStorage.clear();
   localStorage.setItem("suggestions","[]");
-  consle.log("cleared");
+  console.log("cleared");
 });
 
 let loadedSuggestions = [];
