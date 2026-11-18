@@ -13,13 +13,8 @@ test.addEventListener('click', () => {
 let loadedSuggestions = [];
 loadedSuggestions.push({"title":"Fix AC","suggestion":"Example text aaaaaaaa","votes":2,"author":"John","date":"5/10/26","id":0});
 loadedSuggestions.push({"title":"Example","suggestion":"Example","votes":-1000,"author":"Someone","date":"1/2/23","id":1});
+
 loadedSuggestions = getSuggestions();
-if (loadedSuggestions.length == 0) {
-  localStorage.setItem("suggestions","[]");
-  console.log("i guess");
-  loadedSuggestions = [];
-  console.log(loadedSuggestions);
-}
 
 console.log(loadedSuggestions);
 
@@ -51,15 +46,20 @@ function createTable(data) {
 }
 
 function getSuggestions() {
-  return JSON.parse(localStorage.getItem("suggestions")) ?? [];
+  let data = [];
+  try {
+    data = JSON.parse(localStorage.getItem("suggestions"));
+  } catch (error) {
+    console.log("error :(");
+    console.error(":( ",error);
+    data = [];
+    localStorage.setItem("suggestions","[]");
+  }
+  return data;
 } 
 
 function addSuggestion(item) {
   let saved = getSuggestions();
-  if (saved.length == 0) {
-    saved = [];
-    console.log("i don't even know");
-  }
   saved.push(item);
   localStorage.setItem("suggestions",JSON.stringify(saved));
 }
