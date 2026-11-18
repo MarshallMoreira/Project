@@ -9,7 +9,7 @@ loadedSuggestions.push({"title":"Fix AC","suggestion":"Example text aaaaaaaa","v
 loadedSuggestions.push({"title":"Example","suggestion":"Example","votes":-1000,"author":"Someone","date":"1/2/23","id":1});
 loadedSuggestions = getSuggestions();
 if (loadedSuggestions.length == 0) {
-  localStorage.setItem("suggestions",[]);
+  localStorage.setItem("suggestions","[]");
   console.log("i guess");
   loadedSuggestions = [];
   console.log(loadedSuggestions);
@@ -45,7 +45,7 @@ function createTable(data) {
 }
 
 function getSuggestions() {
-  return localStorage.getItem("suggestions") ?? [];
+  return JSON.parse(localStorage.getItem("suggestions")) ?? [];
 } 
 
 function addSuggestion(item) {
@@ -55,10 +55,10 @@ function addSuggestion(item) {
     console.log("i don't even know");
   }
   saved.push(item);
-  localStorage.setItem("suggestions",saved);
+  localStorage.setItem("suggestions",JSON.stringify(saved));
 }
 
 test.addEventListener('click', () => {
   localStorage.clear();
-  localStorage.setItem("suggestions",[]);
+  localStorage.setItem("suggestions","[]");
 });
