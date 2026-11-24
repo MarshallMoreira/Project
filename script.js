@@ -1,5 +1,4 @@
 const form = document.querySelector('.createForm');
-console.log(form);
 const suggestionsTable = document.querySelector('#suggestionsOutput');
 
 const test = document.getElementById("test");
@@ -16,7 +15,7 @@ loadedSuggestions.push({"title":"Example","suggestion":"Example","votes":-1000,"
 
 loadedSuggestions = getSuggestions();
 
-console.log(loadedSuggestions);
+
 
 form.addEventListener('submit', () => {
   event.preventDefault();
