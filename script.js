@@ -29,7 +29,7 @@ form.addEventListener('submit', () => {
 
 suggestionsTable.innerHTML = createTable(loadedSuggestions);
 
-function createTable(data) {
+function createTable(data) { // I am NOT changing this to use the DOM stuff like document.createELement and document.appendChild because that is like 300% more work when this works perfectly fine
   let output = "<tr><th>Title</th><th>Suggestion</th><th>Votes</th><th>Info</th></tr>";
   let next = "";
   for (let i = 0; i < data.length; i++) {
