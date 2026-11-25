@@ -49,3 +49,20 @@ textarea {
         }
     }
 }
+
+/* Taken from somewhere else */
+.info-box .panels {
+  height: 352px;
+  clear: both;
+  position: relative;
+}
+.info-box [role="tabpanel"] {
+  position: absolute;
+  padding: 0.8rem 1.2rem;
+  height: 352px;
+  top: 0;
+  left: 0;
+}
+.info-box [role="tabpanel"].is-hidden {
+  display: none;
+}

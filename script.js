@@ -13,7 +13,7 @@ let loadedSuggestions = [];
 loadedSuggestions.push({"title":"Fix AC","suggestion":"Example text aaaaaaaa","votes":2,"author":"John","date":"5/10/26","id":0});
 loadedSuggestions.push({"title":"Example","suggestion":"Example","votes":-1000,"author":"Someone","date":"1/2/23","id":1});
 
-loadedSuggestions = getSuggestions();
+//loadedSuggestions = getSuggestions();
 
 
 
@@ -62,3 +62,58 @@ function addSuggestion(item) {
   saved.push(item);
   localStorage.setItem("suggestions",JSON.stringify(saved));
 }
+
+
+/* I didn't make the following code.
+I took it from https://github.com/mdn/learning-area/blob/main/css/css-layout/practical-positioning-examples/tabs-manual.js and edited/removed some.
+*/
+class TabsManual {
+  constructor(groupNode) {
+    this.tablistNode = groupNode;
+    this.tabs = [];
+    this.firstTab = null;
+    this.lastTab = null;
+    this.tabs = Array.from(this.tablistNode.querySelectorAll("[role=tab]"));
+    this.tabpanels = [];
+    for (let i = 0; i < this.tabs.length; i++) {
+      const tab = this.tabs[i];
+      const tabpanel = document.getElementById(
+        tab.getAttribute("aria-controls")
+      );
+      tab.setAttribute("aria-selected", "false");
+      this.tabpanels.push(tabpanel);
+      tab.addEventListener("click", this.onClick.bind(this));
+      if (!this.firstTab) {
+        this.firstTab = tab;
+      }
+      this.lastTab = tab;
+    }
+    this.setSelectedTab(this.firstTab);
+  }
+
+  setSelectedTab(currentTab) {
+    for (let i = 0; i < this.tabs.length; i++) {
+      const tab = this.tabs[i];
+      if (currentTab === tab) {
+        tab.setAttribute("aria-selected", "true");
+        tab.removeAttribute("tabindex");
+        this.tabpanels[i].classList.remove("is-hidden");
+      } else {
+        tab.setAttribute("aria-selected", "false");
+        this.tabpanels[i].classList.add("is-hidden");
+      }
+    }
+  }
+  onClick(event) {
+    this.setSelectedTab(event.currentTarget);
+  }
+}
+
+// Initialize tablist
+window.addEventListener("load", function () {
+  const tablists = document.querySelectorAll("[role=tablist].manual");
+  for (let i = 0; i < tablists.length; i++) {
+    new TabsManual(tablists[i]);
+  }
+});
+/* Reminder that the previous code was not mine (though edited) but I do somewhat understand what it is doing. */

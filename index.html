@@ -8,40 +8,53 @@
 </head>
 <body>
   <h1>Student Suggestor</h1>
-  <h2>Create</h2>
-  <div>
-    <form class="createForm">
-      <p>
-        <label for="title">Title:</label>
-        <input id="title" name="post_title" />
-      </p>
-
-      <p>
-        <label for="msg">Message:</label>
-        <textarea id="msg" name="post_msg"></textarea>
-      </p>
-
-      <p>
-        <button type="submit">Submit your suggestion</button>
-      </p>
-    </form>
-    <br>
-    <h2>Suggestions</h2>
-    <h3>Search</h3>
-    <label for="search">Search:</label>
-    <input id="search" name="search" />
-    <select>
-      <option value="title">By Title</option>
-      <option value="suggestion">By Contents</option>
-      <option value="votes">By Votes</option>
-      <option value="recent">By Most Recent</option>
-    </select>
-    <br><br>
-    <div class="suggestionsTable">
-      <table id="suggestionsOutput"> <!-- Filled by the script --> </table>
+  <section class="info-box">
+    <div role="tablist" class="manual">
+      <button id="tab-1" type="button" role="tab" aria-selected="true" aria-controls="tabpanel-1"><span>Create</span></button>
+      <button id="tab-2" type="button" role="tab" aria-selected="false" aria-controls="tabpanel-2"><span>Suggestions</span></button>
+      <button id="tab-3" type="button" role="tab" aria-selected="false" aria-controls="tabpanel-3"><span>Placeholder</span></button>
     </div>
-    <br>
-    <button id="test">test button</button>
-  </div>
+
+    <div class="panels">
+      <article id="tabpanel-1" role="tabpanel"  aria-labelledby="tab-1">
+        <h2>Create</h2>
+        <form class="createForm">
+          <p>
+            <label for="title">Title:</label>
+            <input id="title" name="post_title" />
+          </p>
+    
+          <p>
+            <label for="msg">Message:</label>
+            <textarea id="msg" name="post_msg"></textarea>
+          </p>
+          <p>
+            <button type="submit">Submit your suggestion</button>
+          </p>
+        </form>
+      </article>
+    
+      <article id="tabpanel-2" role="tabpanel" aria-labelledby="tab-2">
+        <h2>Suggestions</h2>
+        <h3>Search</h3>
+        <label for="search">Search:</label>
+        <input id="search" name="search" />
+        <select>
+          <option value="title">By Title</option>
+          <option value="suggestion">By Contents</option>
+          <option value="votes">By Votes</option>
+          <option value="recent">By Most Recent</option>
+        </select>
+        <br><br>
+        <div class="suggestionsTable">
+          <table id="suggestionsOutput"> <!-- Filled by the script --> </table>
+        </div>
+        <br>
+      </article>
+      <article id="tabpanel-3" role="tabpanel" aria-labelledby="tab-3">
+        <p>placeholder</p>
+      </article>
+  </section>
+  <button id="test">test button</button>
 </body>
 </html>
